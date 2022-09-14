@@ -21,6 +21,9 @@
 <br> <br>
 Name: <input name="fullname" required="" size="60" type="text"/>
 <br> <br>
+ br> <br>
+Name: <input name="id" required="" size="60" type="text"/>
+<br> <br>
 Email: <input name="email" required="" size="60" type="email"/>
 <br> <br>
 <label for="shoeType">Preferred Shoe</label>
@@ -41,12 +44,14 @@ Email: <input name="email" required="" size="60" type="email"/>
    var email = form["email"].value;
    var fullname = form["fullname"].value;
    var shoeType = form["shoeType"].value;
+  var id = form["id"].value;
+  
    var user = {
      email: email,
      name: fullname
    };
 // Identify call
-    analytics.identify('12345', {
+    analytics.identify(id, {
       email: email,
       name: fullname,
       shoeType: shoeType
